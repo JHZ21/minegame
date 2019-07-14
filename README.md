@@ -1,4 +1,5 @@
 # minegame
+<<<<<<< HEAD
 
 ## Project setup
 ```
@@ -32,3 +33,6 @@ npm run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+mine clearance
+>>>>>>> 634f6380bf26be57b9d9aed98b5c9bd6b0231733

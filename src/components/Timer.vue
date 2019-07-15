@@ -23,6 +23,11 @@ export default {
       this.showTimer(this.endTime - this.startTime);
       clearInterval(this.timerId);
     });
+    EventBus.$on("you-win", () => {
+      this.endTime = Date.now();
+      this.showTimer(this.endTime - this.startTime);
+      clearInterval(this.timerId);
+    });
     //
     EventBus.$on("start-timer", () => {
       this.startTime = Date.now();

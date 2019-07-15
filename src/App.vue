@@ -198,6 +198,7 @@ export default {
       console.log(newVal, this.cols * this.rows - this.boomsNum);
       if (newVal === this.cols * this.rows - this.boomsNum) {
         console.log("you win !!");
+        // 游戏结束，计时停止
         EventBus.$emit("you-win");
       }
     },

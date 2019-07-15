@@ -1,6 +1,8 @@
 <template>
   <div class="palysound">
-    <audio ref="sd" :src="srcSound"></audio>
+    <audio ref="cell-click" :src="srcSoundOption['cell-click']"></audio>
+    <audio ref="burst-sound" :src="srcSoundOption['burst-sound']"></audio>
+    <audio ref="you-win" :src="srcSoundOption['you-win']"></audio>
   </div>
 </template>
 
@@ -12,36 +14,21 @@ export default {
     return {
       srcSound: "",
       srcSoundOption: {
-        "cell-click": "/cell-click0.mp3",
-        "burst-sound": "/burst-sound0.mp3",
-        "you-win": "/youWin.mpg"
+        "cell-click": "./cell-click0.mp3",
+        "burst-sound": "./burst-sound0.mp3",
+        "you-win": "./youWin.mp3"
       }
     };
   },
   created: function() {
-    this.srcSound = this.srcSoundOption["cell-click"];
     EventBus.$on("click-cell", () => {
-      this.srcSound = this.srcSoundOption["cell-click"];
-      this.$refs.sd.play();
+      this.$refs["cell-click"].play();
     });
     EventBus.$on("boom-end", () => {
-      this.$refs.sd.pause();
-      new Promise(resolve => {
-        this.srcSound = this.srcSoundOption["burst-sound"];
-        resolve();
-      }).then(() => {
-        this.$refs.sd.play();
-      });
+      this.$refs["burst-sound"].play();
     });
     EventBus.$on("you-win", () => {
-      // setTimeout( () => {
-      //     new Promise(resolve => {
-      //         this.srcSound = this.srcSoundOption["you-win"];
-      //         resolve();
-      //     }).then(() => {
-      //         this.$refs.sd.play();
-      //     });
-      // },300);
+      this.$refs["you-win"].play();
     });
   }
 };

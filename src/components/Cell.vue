@@ -57,7 +57,7 @@ export default {
       }
       // 如果是点击了鼠标的右键，标记为marked状态
       if ($event.button === 2) {
-        EventBus.$emit("click-cell");
+        // EventBus.$emit("click-cell");
         this.$set(this.cellData, "isMarked", !this.cellData.isMarked);
         return;
       }
@@ -114,11 +114,11 @@ td {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/bomb-burst.png") !important;
+    background-image: url("../../public/bomb-burst.png") !important;
   }
 }
 .marked {
-  background-image: url("/flag.png") !important;
+  background-image: url("../../public/flag.png") !important;
   background-size: cover;
 }
 </style>

@@ -2,8 +2,8 @@
   <div class="palysound">
     <audio
       ref="playsound"
-      v-for="(item, key) in srcSoundOption"
-      :src="item"
+      v-for="(val, key) in srcSoundOption"
+      :src="val"
       :key="key"
     ></audio>
   </div>

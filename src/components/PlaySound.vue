@@ -1,8 +1,11 @@
 <template>
   <div class="palysound">
-    <audio ref="cell-click" :src="srcSoundOption['cell-click']"></audio>
-    <audio ref="burst-sound" :src="srcSoundOption['burst-sound']"></audio>
-    <audio ref="you-win" :src="srcSoundOption['you-win']"></audio>
+    <audio
+      ref="playsound"
+      v-for="(item, key) in srcSoundOption"
+      :src="item"
+      :key="key"
+    ></audio>
   </div>
 </template>
 
@@ -22,13 +25,13 @@ export default {
   },
   created: function() {
     EventBus.$on("click-cell", () => {
-      this.$refs["cell-click"].play();
+      this.$refs.playsound[0].play();
     });
     EventBus.$on("boom-end", () => {
-      this.$refs["burst-sound"].play();
+      this.$refs.playsound[1].play();
     });
     EventBus.$on("you-win", () => {
-      this.$refs["you-win"].play();
+      this.$refs.playsound[2].play();
     });
   }
 };

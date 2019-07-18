@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>这是AICODER项目</h1>
+    <h1>菜鸟扫雷</h1>
     <h2>非炸弹：{{ hasClearCellsNum }} / {{ cols * rows - boomsNum }}</h2>
     <div class="container">
       <div class="main">

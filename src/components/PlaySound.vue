@@ -17,9 +17,9 @@ export default {
     return {
       srcSound: "",
       srcSoundOption: {
-        "cell-click": "./cell-click0.MP3",
-        "burst-sound": "./burst-sound0.MP3",
-        "you-win": "./youWin.MP3"
+        "cell-click": "./cell-click0.mp3",
+        "burst-sound": "./burst-sound0.mp3",
+        "you-win": "./youWin.mp3"
       }
     };
   },
